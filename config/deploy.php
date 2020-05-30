@@ -37,7 +37,7 @@ return [
     | Hooks
     |--------------------------------------------------------------------------
     |
-    | Hooks let you customize your deployments conveniently by pushing tasks 
+    | Hooks let you customize your deployments conveniently by pushing tasks
     | into strategic places of your deployment flow. Each of the official
     | strategies invoke hooks in different ways to implement their logic.
     |
@@ -48,13 +48,13 @@ return [
         'start' => [
             //
         ],
-        
+
         // Code and composer vendors are ready but nothing is built.
         'build' => [
             'yarn:install',
             'yarn:production',
         ],
-        
+
         // Deployment is done but not live yet (before symlink)
         'ready' => [
             'artisan:storage:link',
@@ -63,17 +63,17 @@ return [
             'artisan:config:cache',
             'artisan:migrate',
         ],
-        
+
         // Deployment is done and live
         'done' => [
           //  'fpm:reload',
         ],
-        
+
         // Deployment succeeded.
         'success' => [
             //
         ],
-        
+
         // Deployment failed.
         'fail' => [
             //
@@ -93,7 +93,8 @@ return [
 
     'options' => [
         'application' => env('APP_NAME', 'Aurora Christian School'),
-        'repository' => 'git@github.com:Aabill/acs-bill-form-1.git',
+        'repository_fork' => 'git@github.com:Aabill/acs-bill-form-1.git',
+        'repository' => 'git@github.com:oxecloud/aurora.git',
         'php_fpm_service' => 'php7.3-fpm',
     ],
 
@@ -112,7 +113,7 @@ return [
         '46.101.135.214' => [
             'deploy_path' => '/var/www/aurorachristianschool.com',
             'user' => 'deployer',
-            'identityFile' => env('DEPLOYER_KEY', '~/.ssh/public_key.pub' ), 
+            'identityFile' => env('DEPLOYER_KEY', '~/.ssh/public_key.pub' ),
         ],
     ],
 
@@ -136,7 +137,7 @@ return [
     | Include additional Deployer recipes
     |--------------------------------------------------------------------------
     |
-    | Here, you can add any third party recipes to provide additional tasks, 
+    | Here, you can add any third party recipes to provide additional tasks,
     | options and strategies. Therefore, it also allows you to create and
     | include your own recipes to define more complex deployment flows.
     |
