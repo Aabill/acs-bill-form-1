@@ -1,0 +1,32 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^.*[-/]s(\d+)/?$ widgetso/index\.php?id=$1&%{QUERY_STRING} [L]
+RewriteRule ^.*[-/]s(\d+)[-/].*$ widgetso/index\.php?id=$1&%{QUERY_STRING} [L]
+RewriteRule ^s(\d+)[-/].*$ widgetso/index\.php?id=$1&%{QUERY_STRING} [L]
+RewriteRule ^.*[-/]s(\d+)-.*$ widgetso/index\.php?id=$1&%{QUERY_STRING} [L]
+RewriteRule ^s(\d+)-.*$ widgetso/index\.php?id=$1&%{QUERY_STRING} [L]
+RewriteRule ^y(\d+)[-/].*[-/]s(\d+)-.*$ widgetso/index\.php?id=$1-$2&%{QUERY_STRING} [L]
+RewriteRule ^y(\d+)[-/]s(\d+)[-/].*$ widgetso/index\.php?id=$1-$2&%{QUERY_STRING} [L]
+RewriteRule ^s(\d+)[-/].*[-/]y(\d+)[-/].*$ widgetso/index\.php?id=$2-$1&%{QUERY_STRING} [L]
+RewriteRule ^s(\d+)[-/]y(\d+)[-/].*$ widgetso/index\.php?id=$2-$1&%{QUERY_STRING} [L]
+RewriteRule ^.*[-/]s(\d+)[-/]y(\d+)[-/].*$ widgetso/index\.php?id=$2-$1&%{QUERY_STRING} [L]
+RewriteRule ^.*[-/]s(\d+)[-/].*[-/]y(\d+)[-/].*$ widgetso/index\.php?id=$2-$1&%{QUERY_STRING} [L]
+RewriteRule ^.*[-/]y(\d+)[-/].*[-/]s(\d+)[-/].*$ widgetso/index\.php?id=$1-$2&%{QUERY_STRING} [L]
+RewriteRule ^.*[-/]y(\d+)[-/]s(\d+)[-/].*$ widgetso/index\.php?id=$1-$2&%{QUERY_STRING} [L]
+
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+RewriteCond %{HTTP_HOST} ^lareinafresh\.com\.ph$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.lareinafresh\.com\.ph$
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^/?$ "http\:\/\/website\.lareinafresh\.com\.ph\/" [R=301,L]
+

@@ -57,6 +57,8 @@
               <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
             </p>
         </div>
+        <b-avatar variant="info" src="https://placekitten.com/300/300"></b-avatar>
+        <b-avatar src="/images/people/leander.jpg"></b-avatar>
   </div>
 
 </template>
