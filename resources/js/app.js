@@ -43,10 +43,11 @@ Vue.component('upload-image', UploadImage)
 
 
 
-import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
+import { BootstrapVue, BootstrapVueIcons, IconsPlugin } from 'bootstrap-vue'
 
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
+Vue.use(IconsPlugin)
 
 import 'vue-bootstrap-selectpicker/dist/css/vue-bootstrap-selectpicker.min.css'
 import SelectPicker from 'vue-bootstrap-selectpicker'
@@ -75,6 +76,11 @@ Vue.component(
 Vue.component(
     'passport-personal-access-tokens',
     require('./components/passport/PersonalAccessTokens.vue').default
+);
+
+Vue.component(
+    'app-footer',
+    require('./components/layouts/Footer.vue').default
 );
 
 

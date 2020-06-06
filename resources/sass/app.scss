@@ -35,7 +35,6 @@ nav.navbar-transparent{
 header {
 
     position: relative;
-    background__: linear-gradient(180deg, #FF8008 0%,#FFC837 50%);
     background: linear-gradient(180deg, #F09819 0%, #EDDE5D 50%);
     height: 75vh;
     min-height: 25rem;
@@ -43,7 +42,7 @@ header {
     overflow: hidden;
 
     video {
-        filter: grayscale(1);
+        filter: grayscale(0.7);
         mix-blend-mode: overlay;
         position: absolute;
         top: 50%;

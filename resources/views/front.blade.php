@@ -57,13 +57,6 @@
 
     @endguest
 
-    <footer class="mastfoot mt-auto">
-        <div class="inner">
-            <p>#38 Zamora Street, Buag
-            <br />Bambang, Nueva Vizcaya 3702 </p>
-        </div>
-    </footer>
-
 
 </div>
 @endsection

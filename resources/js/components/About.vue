@@ -1,5 +1,10 @@
 <template>
   <div>
+
+    <header >
+        <video playsinline="playsinline" muted  autoplay loop src="https://aurorachristianschool.com/storage/acsv.mp4"></video>
+    </header>
+
     <b-carousel
       id="carousel-1"
       v-model="slide"
@@ -57,9 +62,15 @@
               <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
             </p>
         </div>
-        <b-avatar variant="info" src="https://placekitten.com/300/300"></b-avatar>
-        <b-avatar src="/images/people/leander.jpg"></b-avatar>
-  </div>
+
+    <b-container>
+        <div class="row">
+            <b-col cols="4" v-for="(s,i) in staff" v-bind:key="i" >
+                <b-img v-bind="s" rounded="circle"></b-img>
+            </b-col>
+        </div>
+    </b-container>
+</div>
 
 </template>
 
@@ -67,6 +78,17 @@
   export default {
     data() {
       return {
+          staff: [
+              {
+                src: 'images/people/leander.jpg', blankColor: '#777', class: 'img-fluid' , alt: 'Leander'
+              },
+              {
+                src: 'images/people/leander.jpg', blankColor: '#777', class: 'img-fluid' , alt: 'Leander'
+              },
+              {
+                src: 'images/people/leander.jpg', blankColor: '#777', class: 'img-fluid' , alt: 'Leander'
+              }
+          ],
         slide: 0,
         sliding: null
       }
@@ -81,3 +103,8 @@
     }
   }
 </script>
+<style scoped>
+header {
+    background: linear-gradient(180deg, #6dd3d6 0%, #4da3a6 50%);
+}
+</style>

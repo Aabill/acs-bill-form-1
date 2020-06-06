@@ -49,9 +49,9 @@
             <router-view></router-view>
         </div>
 
-        <footer>
-            asdfasdf
-        </footer>
+        <app-footer>
+            aaaa
+        </app-footer>
     </div>
 </template>
 <script>

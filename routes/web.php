@@ -13,6 +13,9 @@
 
 
 Route::get('/','PagesController@index');
+Route::get('/who','PagesController@index');
+Route::get('/hi','PagesController@index');
+
 
 // Users
 Route::get('/users/{view?}','User\UsersManagerController@index')->name('users');
